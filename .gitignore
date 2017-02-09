@@ -1,0 +1,5 @@
+# Ignore distribution files
+/dist/
+
+# Ignore local copy of vendor packages
+/vendor/

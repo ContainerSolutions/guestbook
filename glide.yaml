@@ -1,0 +1,6 @@
+package: github.com/ContainerSolutions/guestbook
+import:
+- package: github.com/urfave/cli
+  version: ^1.19.1
+- package: github.com/lib/pq
+  version: a6657b2386e9b8be76484c08711b02c7cf867ead
