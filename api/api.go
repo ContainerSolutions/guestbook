@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"html/template"
 	"net/http"
+	"os"
 
 	"github.com/ContainerSolutions/guestbook/entries"
 	"github.com/prometheus/common/log"
@@ -65,9 +66,12 @@ func (a *Api) pageRender(w http.ResponseWriter, messages []string) {
 	if err != nil {
 		messages = append(messages, err.Error())
 	}
+	h, _ := os.Hostname()
 	p := PageData{
 		Entries:  es,
 		Messages: messages,
+		Host:     h,
 	}
+
 	a.t.Execute(w, p)
 }

@@ -5,6 +5,7 @@ import "github.com/ContainerSolutions/guestbook/entries"
 type PageData struct {
 	Entries  []entries.Entry
 	Messages []string
+	Host     string
 }
 
 var pagetemplate = `
@@ -45,6 +46,9 @@ var pagetemplate = `
 	{{range .Entries }}
            <div>{{.Name}} - {{ .Date }} - {{ .Message }}</div>  
 	{{ end }}
+    </div>
+    <div id="Host">
+    	Host: {{ .Host }}
     </div>
 </body>
 
