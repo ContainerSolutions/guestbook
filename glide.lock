@@ -1,10 +1,10 @@
-hash: d1d4809468d48ac1299847055a791efc3c18e8f7eeb1494f6c6b337c737082a9
-updated: 2017-02-09T14:20:45.335730934+01:00
+hash: aaf4d990e6cf340226eeaa747fc180f198302d7e5572d1330c63ea72614b3b27
+updated: 2017-02-10T08:31:56.476239117+01:00
 imports:
+- name: github.com/go-gorp/gorp
+  version: 390956328094c74d7c75a7e71a4d17e9297ed90e
 - name: github.com/lib/pq
-  version: a6657b2386e9b8be76484c08711b02c7cf867ead
+  version: 0477eb88c5ca4009cb281f13c90633375b6a9987
   subpackages:
   - oid
-- name: github.com/urfave/cli
-  version: 0bdeddeeb0f650497d603c4ad7b20cfe685682f6
 testImports: []
