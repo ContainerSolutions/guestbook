@@ -6,9 +6,9 @@ import (
 )
 
 type Entry struct {
-	Name    string
-	Message string
-	Date    time.Time
+	Name    string    `db:"name"`
+	Message string    `db:"message"`
+	Date    time.Time `db:"date"`
 }
 
 func New(name, message string) Entry {

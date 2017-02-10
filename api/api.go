@@ -6,6 +6,7 @@ import (
 	"net/http"
 
 	"github.com/ContainerSolutions/guestbook/entries"
+	"github.com/prometheus/common/log"
 )
 
 type Api struct {
@@ -49,6 +50,7 @@ func (a *Api) setEntry(w http.ResponseWriter, r *http.Request) {
 	if len(e.Message) > 0 && len(e.Name) > 0 {
 		err := a.r.Write(e)
 		if err != nil {
+			log.Info(err)
 			a.pageRender(w, []string{"Could not save entry"})
 			return
 		}

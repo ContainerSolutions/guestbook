@@ -2,6 +2,7 @@ package db
 
 import (
 	"database/sql"
+	"fmt"
 
 	"github.com/ContainerSolutions/guestbook/entries"
 	"github.com/go-gorp/gorp"
@@ -25,12 +26,12 @@ func New(connstr string) (entries.Retriever, error) {
 
 func (d *DB) GetAll() ([]entries.Entry, error) {
 	var es []entries.Entry
-	_, err := d.dbMap.Select(&es, "select * from ? order by Date", tablename)
+	_, err := d.dbMap.Select(&es, fmt.Sprintf("select * from %v order by date", tablename))
 	return es, err
 }
 
 func (d *DB) Write(e entries.Entry) error {
-	return d.dbMap.Insert(e)
+	return d.dbMap.Insert(&e)
 }
 
 func (d *DB) init(connstr string) error {
