@@ -4,6 +4,9 @@ OUT := dist/guestbook
 build:
 	@go build -o $(OUT) .
 
+build-linux:
+	@GOOS=linux GOARCH=amd64 go build -o $(OUT).linux-amd64 .
+
 run: build
 	@$(OUT)
 
