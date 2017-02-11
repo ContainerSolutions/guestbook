@@ -1,10 +1,23 @@
 hash: aaf4d990e6cf340226eeaa747fc180f198302d7e5572d1330c63ea72614b3b27
-updated: 2017-02-10T08:31:56.476239117+01:00
+updated: 2017-02-11T19:09:48.695645943+01:00
 imports:
 - name: github.com/go-gorp/gorp
   version: 390956328094c74d7c75a7e71a4d17e9297ed90e
 - name: github.com/lib/pq
-  version: 0477eb88c5ca4009cb281f13c90633375b6a9987
+  version: a6657b2386e9b8be76484c08711b02c7cf867ead
   subpackages:
   - oid
+- name: github.com/prometheus/common
+  version: dd2f054febf4a6c00f2343686efb775948a8bff4
+  subpackages:
+  - log
+- name: github.com/Sirupsen/logrus
+  version: 3f603f494d61c73457fb234161d8982b9f0f0b71
+- name: golang.org/x/sys
+  version: aaabbdc969c3935a2a7f61efac801e7163c73a2a
+  subpackages:
+  - unix
+  - windows
+  - windows/registry
+  - windows/svc/eventlog
 testImports: []
