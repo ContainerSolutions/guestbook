@@ -1,14 +1,19 @@
-PGIMG := postgres:9.6.1-alpine
-OUT := dist/guestbook
+PGIMG    := postgres:9.6.1-alpine
+OUT      := dist/guestbook
+OUTOSX   := $(OUT).darwin64
+OUTLINUX := $(OUT).linux-amd64
 
-build:
-	@go build -o $(OUT) .
+.PHONY: dist
+dist: build-osx build-linux
+
+build-osx:
+	@go build -o $(OUTOSX) .
 
 build-linux:
-	@GOOS=linux GOARCH=amd64 go build -o $(OUT).linux-amd64 .
+	@GOOS=linux GOARCH=amd64 go build -o $(OUTLINUX) .
 
-run: build
-	@$(OUT)
+run:
+	@go run main.go
 
 pg:
 	@docker run -d --name pg -p 5432:5432 -e POSTGRES_PASSWORD=foobar $(PGIMG)
